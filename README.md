@@ -1,30 +1,38 @@
 # "RESTfull-ish" API for a Simple ToDo App
 
 ## Endpoints Available
-- Register a user:  `POST`
 
-    - `https://somehost.com/register`
-- Authenticate a user: `POST`
+-   Register a user: `POST`
 
-    - `https://somehost.com/authenticate`
-- Write a new ToDo record to the database: `POST`
+    -   `https://somehost.com/register`
 
-    - `https://somehost.com/api/todo`
-- Get list of all stored ToDo records: `GET`
+-   Authenticate a user: `POST`
 
-    - `https://somehost.com/api/todos`
+    -   `https://somehost.com/authenticate`
+
+-   Write a new ToDo record to the database: `POST`
+
+    -   `https://somehost.com/api/todo`
+
+-   Get list of all stored ToDo records: `GET`
+
+    -   `https://somehost.com/api/todos`
 
 ## Shape of `POST` Requests
-- `POST` request for registering user
+
+-   `POST` request for registering user
+
 ```json
 {
     "username": "<NewUsersName>",
     "password": "<NewUserPassword>"
 }
 ```
-- `POST` request for authenticating is identical to registering
-    - Successful authentication request returns a JASON WEB TOKEN (jwt) for future `GET` requests authentication verification.
-- `POST` request for writing new ToDo record to database
+
+-   `POST` request for authenticating is identical to registering
+    -   Successful authentication request returns a JASON WEB TOKEN (jwt) for future `GET` requests authentication verification.
+-   `POST` request for writing new ToDo record to database
+
 ```json
 {
     "description": "<some description text>",
@@ -36,26 +44,23 @@
 ```
 
 ## Shape of `GET` request for receiving stored records
+
 ```json
-{
-    [
-        {
-            "id": <1: auto generated>,
-            "description": "<some description text>",
-            "startDate": "<string date>",
-            "endDate": "<string date>",
-            "priority": "<LOW | MEDIUM | HIGH>"
-        },
-        {
-            "id": <2: auto generated>,
-            "description": "<some description text>",
-            "startDate": "<string date>",
-            "endDate": "<string date>",
-            "priority": "<LOW | MEDIUM | HIGH>"
-        },
-        {
-            ...
-        }
-    ]
-}
+[
+    {
+        "id": 1,  // IDs are auto generated
+        "description": "<some description text>",
+        "startDate": "<string date>",
+        "endDate": "<string date>",
+        "priority": "<LOW | MEDIUM | HIGH>"
+    },
+    {
+        "id": 2,
+        "description": "<some description text>",
+        "startDate": "<string date>",
+        "endDate": "<string date>",
+        "priority": "<LOW | MEDIUM | HIGH>"
+    },
+    // ...
+]
 ```
