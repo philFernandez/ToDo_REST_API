@@ -1,5 +1,13 @@
 # "RESTfull-ish" API for a Simple ToDo App
 
+## [Demo application](https://todo-frontend-nine.vercel.app/) that utilizes this api.
+You can register a new user, or use the dummy credentials as follows
+
+
+username : `billy`
+
+password : `billy`
+
 ## Endpoints Available
 
 -   Register a user: `POST`
